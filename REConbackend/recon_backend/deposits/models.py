@@ -30,6 +30,7 @@ class SystemSetting(models.Model):
     maximum_minutes_per_transaction = models.IntegerField(default=480)
     session_expiry_hours = models.IntegerField(default=24)
     bin_fill_alert_threshold = models.DecimalField(max_digits=5, decimal_places=2, default=90.00)
+    daily_session_limit = models.IntegerField(default=3)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
