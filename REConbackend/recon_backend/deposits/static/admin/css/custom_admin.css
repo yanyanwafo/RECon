@@ -1,134 +1,331 @@
-   body,
-   body * {
-       font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Roboto, sans-serif !important;
-   }
-   
-   #content,
-   #content-main,
-   #changelist,
-   #changelist-form,
-   #changelist-form .results {
-       background: transparent !important;
-   }
-   
-   #changelist table,
-   #result_list,
-   .results table {
-       width: 100% !important;
-       background-color: #0f172a !important;
-       border: 1px solid #065f46 !important;
-       border-radius: 8px !important;
-       border-collapse: separate !important;
-       border-spacing: 0 !important;
-       overflow: hidden !important;
-   }
-   
-   #changelist table thead th,
-   #result_list thead th {
-       background-color: #065f46 !important;
-       color: #ffffff !important;
-       font-weight: 600 !important;
-       font-size: 12px !important;
-       letter-spacing: 0.04em !important;
-       border-bottom: 1px solid #047857 !important;
-   }
-   
-   #changelist table tbody tr,
-   #result_list tbody tr,
-   #changelist table tbody tr:nth-child(odd),
-   #changelist table tbody tr:nth-child(even) {
-       background-color: #0f172a !important;
-       color: #f1f5f9 !important;
-   }
-   
-   #changelist table tbody tr:hover,
-   #result_list tbody tr:hover {
-       background-color: rgba(6, 95, 70, 0.28) !important;
-   }
-   
-   #changelist table tbody td,
-   #changelist table tbody th,
-   #result_list tbody td,
-   #result_list tbody th {
-       background-color: transparent !important;
-       color: #f1f5f9 !important;
-       border-bottom: 1px solid #1e293b !important;
-       padding: 10px 12px !important;
-       font-size: 13.5px !important;
-   }
-   
-   #changelist table tbody a,
-   #result_list tbody a {
-       color: #34d399 !important;
-       font-weight: 600 !important;
-       text-decoration: none !important;
-   }
-   
-   #changelist table tbody a:hover,
-   #result_list tbody a:hover {
-       color: #fbbf24 !important;
-       text-decoration: underline !important;
-   }
-   
-   #changelist .paginator,
-   p.paginator {
-       background-color: #0f172a !important;
-       color: #cbd5e1 !important;
-       border: 1px solid #1e293b !important;
-       border-top: none !important;
-       border-radius: 0 0 8px 8px !important;
-       padding: 10px 14px !important;
-       font-size: 12.5px !important;
-   }
-   
-   #changelist .actions {
-       background-color: #0f172a !important;
-       border: 1px solid #1e293b !important;
-       border-radius: 8px !important;
-       padding: 10px 12px !important;
-       margin-bottom: 12px !important;
-       color: #e2e8f0 !important;
-   }
-   
-   #changelist .actions select,
-   #changelist-search input[type="text"],
-   #nav-filter {
-       background-color: #1e293b !important;
-       color: #f8fafc !important;
-       border: 1px solid #065f46 !important;
-       border-radius: 6px !important;
-       padding: 6px 10px !important;
-       font-size: 13px !important;
-   }
-   
-   #changelist .actions .button {
-       background-color: #065f46 !important;
-       color: #ffffff !important;
-       border: 1px solid #10b981 !important;
-       border-radius: 6px !important;
-       padding: 6px 14px !important;
-       font-weight: 600 !important;
-       cursor: pointer !important;
-   }
-   
-   #changelist .actions .button:hover {
-       background-color: #059669 !important;
-   }
-   
-   .object-tools a.addlink {
-       background-color: #065f46 !important;
-       color: #ffffff !important;
-       border: 1px solid #f59e0b !important;
-       border-radius: 6px !important;
-       font-weight: 600 !important;
-       font-size: 12px !important;
-   }
-   
-   .object-tools a.addlink:hover {
-       background-color: #059669 !important;
-   }
-   
-   /* Keep night mode toggle hidden everywhere */
-   .theme-toggle {
-       display: none !important;
-   }
+/* Hide Django Admin's theme toggle button */
+.theme-toggle,
+button.theme-toggle,
+#user-tools .theme-toggle,
+#user-tools button[data-theme-toggle],
+#user-tools svg.theme-icon {
+  display: none !important;
+}
+
+/* Global dark background & typography across ALL admin pages (including Users & Groups) */
+html, body, #container, #main, .content, #content {
+  background-color: #090d16 !important;
+  color: #e2e8f0 !important;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header bar matching RECON ADMIN */
+#header {
+  background: linear-gradient(90deg, #1b4d7a 0%, #1d6f7a 100%) !important;
+  border-bottom: 1px solid #1e293b !important;
+  padding: 14px 28px !important;
+  height: auto !important;
+}
+
+#site-name a {
+  color: #eab308 !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+body.dashboard #content > h1 {
+  display: none !important;
+}
+
+#user-tools, #user-tools a {
+  color: #e2e8f0 !important;
+  font-size: 12px !important;
+}
+
+/* Hide breadcrumbs everywhere */
+div.breadcrumbs {
+  display: none !important;
+}
+
+/* Left sidebar matching dashboard cards */
+#nav-sidebar {
+  background-color: #0d1320 !important;
+  border-right: 1px solid #1e293b !important;
+}
+
+#nav-sidebar .module {
+  background-color: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 6px !important;
+  overflow: hidden;
+  margin-bottom: 14px !important;
+}
+
+#nav-sidebar .module caption,
+#nav-sidebar .module th {
+  background: #1d5b82 !important;
+  color: #ffffff !important;
+}
+
+/* Main content area & full-width changelist tables (Users, Groups, Deposits, etc.) */
+#content {
+  padding: 24px 28px !important;
+  width: 100% !important;
+  box-sizing: border-box;
+}
+
+#content h1,
+.dashboard #content h1 {
+  color: #f8fafc !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  margin-bottom: 18px !important;
+}
+
+.module table th,
+.module table td,
+.module table th a,
+.module table td a {
+  color: #e2e8f0 !important;
+}
+
+.module table td a.addlink {
+  color: #4ade80 !important;
+  font-weight: 600 !important;
+}
+
+.module table td a.changelink {
+  color: #facc15 !important;
+  font-weight: 600 !important;
+}
+
+#changelist,
+#changelist-form,
+#changelist .results,
+#result_list {
+  width: 100% !important;
+}
+
+/* Action bar & search bar */
+#toolbar,
+#changelist .actions {
+  background-color: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 14px !important;
+  color: #e2e8f0 !important;
+}
+
+/* Table cards with emerald header matching your Recent Actions / WiFi Sessions cards */
+#changelist .results {
+  background-color: #111827 !important;
+  border: 1px solid #15803d !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+#result_list thead th {
+  background-color: #11694e !important;
+  color: #ffffff !important;
+  border-bottom: 1px solid #15803d !important;
+  padding: 12px 16px !important;
+}
+
+#result_list thead th a:link,
+#result_list thead th a:visited {
+  color: #ffffff !important;
+}
+
+#result_list tbody tr {
+  background-color: #111827 !important;
+  border-bottom: 1px solid #1e293b !important;
+}
+
+#result_list tbody tr:nth-child(even) {
+  background-color: #0f172a !important;
+}
+
+#result_list tbody tr:hover {
+  background-color: #162238 !important;
+}
+
+#result_list tbody td,
+#result_list tbody th,
+#result_list tbody th a {
+  color: #10b981 !important;
+  padding: 12px 16px !important;
+}
+
+#result_list tbody td {
+  color: #e2e8f0 !important;
+}
+
+/* Right-side filter panel (used on Users, Deposits, WiFi Sessions) */
+#changelist-filter {
+  background-color: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding-bottom: 12px !important;
+}
+
+#changelist-filter h2 {
+  background-color: #1d5b82 !important;
+  color: #ffffff !important;
+  border-radius: 7px 7px 0 0 !important;
+  padding: 10px 14px !important;
+}
+
+#changelist-filter h3 {
+  color: #94a3b8 !important;
+}
+
+#changelist-filter a {
+  color: #cbd5e1 !important;
+}
+
+#changelist-filter li.selected a {
+  color: #10b981 !important;
+  font-weight: 600 !important;
+}
+
+/* Add / Change Forms (Users, Groups, Deposits, System Settings) */
+fieldset.module,
+.inline-group .tabular,
+.inline-group .stacked {
+  background-color: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  margin-bottom: 18px !important;
+  overflow: hidden;
+}
+
+fieldset.module h2,
+.inline-group h2 {
+  background-color: #1d5b82 !important;
+  color: #ffffff !important;
+  padding: 10px 16px !important;
+}
+
+.form-row {
+  border-bottom: 1px solid #1e293b !important;
+  padding: 12px 16px !important;
+}
+
+.form-row label {
+  color: #cbd5e1 !important;
+}
+
+/* Inputs, selects, textareas */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"],
+input[type="url"],
+select,
+textarea,
+.vTextField,
+.vIntegerField {
+  background-color: #1e293b !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 6px !important;
+  padding: 7px 10px !important;
+}
+
+/* Buttons (+ Add, Save, Go) */
+.object-tools a.addlink,
+.button,
+input[type="submit"],
+.submit-row input {
+  background-color: #11694e !important;
+  color: #ffffff !important;
+  border: 1px solid #10b981 !important;
+  border-radius: 6px !important;
+  padding: 8px 14px !important;
+  font-weight: 600 !important;
+}
+
+.object-tools a.addlink:hover,
+.button:hover,
+input[type="submit"]:hover {
+  background-color: #15803d !important;
+}
+
+.submit-row {
+  background-color: #111827 !important;
+  border: 1px solid #1e293b !important;
+  border-radius: 8px !important;
+  padding: 12px 16px !important;
+}
+
+/* Paginator footer */
+.paginator {
+  background-color: #111827 !important;
+  color: #94a3b8 !important;
+  border-top: 1px solid #1e293b !important;
+  padding: 10px 16px !important;
+}
+
+/* Make table column headers clearly labeled & high-contrast */
+#result_list thead th,
+#result_list thead th span,
+#result_list thead th .text a {
+  background-color: #11694e !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+  text-decoration: none !important;
+}
+
+/* Keep table body rows & cells crisp and readable */
+#result_list tbody td,
+#result_list tbody th,
+#result_list tbody th a {
+  color: #f1f5f9 !important;
+}
+
+/* Ensure form labels, help text, and toolbar labels stay visible */
+label,
+.aligned label,
+#changelist .actions label,
+#toolbar label {
+  color: #e2e8f0 !important;
+}
+
+/* Keep Recent actions legible */
+#content-related .module,
+#content-related .module h2,
+#content-related .module h3,
+#content-related .module li,
+#content-related .module a,
+#content-related .module span {
+  color: #f1f5f9 !important;
+}
+
+/* Prevent horizontal overflow & keep Recent actions inside the viewport */
+html, body, #container, #main {
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+}
+
+body.dashboard #content {
+  width: auto !important;
+  max-width: 100% !important;
+  padding: 20px 24px !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
+body.dashboard #content-main {
+  float: left !important;
+  width: 68% !important;
+  margin-right: 0 !important;
+  box-sizing: border-box !important;
+}
+
+body.dashboard #content-related {
+  float: right !important;
+  width: 29% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  box-sizing: border-box !important;
+}
+
