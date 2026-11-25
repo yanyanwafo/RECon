@@ -9,21 +9,21 @@ button.theme-toggle,
 
 /* Global dark background & typography across ALL admin pages (including Users & Groups) */
 html, body, #container, #main, .content, #content {
-  background-color: #090d16 !important;
+  background-color: #0f172a !important;
   color: #e2e8f0 !important;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 /* Header bar matching RECON ADMIN */
 #header {
-  background: linear-gradient(90deg, #1b4d7a 0%, #1d6f7a 100%) !important;
+  background: linear-gradient(90deg, #1b4d7a 0%, #02633d 100%) !important;
   border-bottom: 1px solid #1e293b !important;
   padding: 14px 28px !important;
   height: auto !important;
 }
 
 #site-name a {
-  color: #eab308 !important;
+  color: #0bb17f !important;
   font-size: 20px !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em;
